@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tienda de Vinos</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>🍷 Bienvenido a BlueVibes Wines</h1>
+
+  <h2>Listado de Productos</h2>
+  <ul>
+    {{#each products}}
+      <li>
+        <strong>{{this.title}}</strong> — ${{this.price}} <br>
+        <em>{{this.description}}</em>
+      </li>
+    {{/each}}
+  </ul>
+</body>
+</html>

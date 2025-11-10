@@ -1,0 +1,25 @@
+<h2>Catálogo de Vinos</h2>
+
+<div class="product-grid">
+  {{#each products}}
+    <div class="product-card">
+      <img src="{{this.thumbnails.[0]}}" alt="{{this.title}}">
+      <h3>{{this.title}}</h3>
+      <p>{{this.description}}</p>
+      <p>Precio: ${{this.price}}</p>
+      <a href="/api/carts/1/product/{{this._id}}" class="btn">Agregar al carrito</a>
+    </div>
+  {{/each}}
+</div>
+
+<div class="pagination">
+  {{#if hasPrevPage}}
+    <a href="/products?page={{prevPage}}" class="btn">⬅️ Anterior</a>
+  {{/if}}
+
+  <span>Página {{page}} de {{totalPages}}</span>
+
+  {{#if hasNextPage}}
+    <a href="/products?page={{nextPage}}" class="btn">Siguiente ➡️</a>
+  {{/if}}
+</div>
